@@ -3,10 +3,10 @@
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
 // Insert
-$bulk = new MongoDB\Driver\BulkWrite;
+/*$bulk = new MongoDB\Driver\BulkWrite;
 $bulk->insert(['name' => '山田', 'address' => '東京']);
 $manager->executeBulkWrite('test_db.test', $bulk);
-
+*/
 // Select
 //$filter = ['address' => ['$gt' => 'tokyo']]; // where句
 $filter = [];
@@ -21,4 +21,5 @@ $cursor = $manager->executeQuery('test_db.test', $query);
 foreach ($cursor as $document) {
   var_dump($document);
 }
+ echo('HElloworkd');
 ?>
